@@ -19,11 +19,6 @@ public class Tests {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String name;
-	@ManyToOne
-    @JoinColumn(name="diagnosticcentre_id")
-	private DiagnosticsCentre diagnosticcentre;
-	@OneToMany(mappedBy="tests")
-	private List<Endpoints> endpoint;
 	private LocalDate startDate;
 	private LocalDate validTillDate;
 	private int availableSeats;
@@ -40,18 +35,6 @@ public class Tests {
 	}
 	public void setName(String name) {
 		this.name = name;
-	}
-	public DiagnosticsCentre getDiagnosticcentre() {
-		return diagnosticcentre;
-	}
-	public void setDiagnosticcentre(DiagnosticsCentre diagnosticcentre) {
-		this.diagnosticcentre = diagnosticcentre;
-	}
-	public List<Endpoints> getEndpoint() {
-		return endpoint;
-	}
-	public void setEndpoint(List<Endpoints> endpoint) {
-		this.endpoint = endpoint;
 	}
 	public LocalDate getStartDate() {
 		return startDate;
